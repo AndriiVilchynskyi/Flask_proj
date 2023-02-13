@@ -1,0 +1,16 @@
+<table>
+  <tr>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Registration Date</th>
+    <th>Number of Orders</th>
+  </tr>
+  {% for client in clients_html %}
+    <tr>
+      <td>{{ client.first_name }}</td>
+      <td>{{ client.last_name }}</td>
+      <td>{{ client.registration_date }}</td>
+      <td>{{ client.number_of_orders }}</td>
+    </tr>
+  {% endfor %}
+</table>

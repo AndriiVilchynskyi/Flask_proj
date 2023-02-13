@@ -1,0 +1,20 @@
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Car number</th>
+    <th>Date</th>
+    <th>Rental time</th>
+    <th>Car rental time</th>
+    <th>Total cost</th>
+  </tr>
+  {% for order in orders_html %}
+    <tr>
+      <td>{{ order.id }}</td>
+      <td>{{ order.car_number }}</td>
+      <td>{{ order.add_date }}</td>
+      <td>{{ order.renal_time }}</td>
+      <td>{{ order.car_rental_cost }}</td>
+      <td>{{ order.total_cost }}</td>
+    </tr>
+  {% endfor %}
+</table>
