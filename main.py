@@ -61,6 +61,7 @@ def db_seed():
 
     order1 = Order(id=412,
                    car_number='ab241',
+                   client_passport_number="ab241",
                    add_date=datetime.datetime.now(),
                    rental_time=2,
                    car_rental_cost=85.00)
@@ -68,6 +69,7 @@ def db_seed():
 
     order2 = Order(id=532,
                    car_number='ac4123',
+                   client_passport_number="ac4123",
                    add_date=datetime.datetime.now(),
                    rental_time=3,
                    car_rental_cost=77.00)
@@ -122,6 +124,7 @@ class Order(db.Model):
     __tablename__ = "orders"
     id = Column(Integer, primary_key=True)
     car_number = Column(String, unique=True)
+    client_passport_number = Column(String, unique=True)
     add_date = Column(Date, default=date.today, nullable=False)
     rental_time = Column(Integer, nullable=False)
     car_rental_cost = Column(Float, nullable=False)
@@ -154,7 +157,7 @@ class ClientSchema(ma.Schema):
 
 class OrderSchema(ma.Schema):
     class Meta:
-        fields = ("id", "car_number", "add_date", "rental_time", "car_rental_cost", "total_cost")
+        fields = ("id", "car_number", "add_date", "client_passport_number", "rental_time", "car_rental_cost", "total_cost")
 
 
 client_schema = ClientSchema()
