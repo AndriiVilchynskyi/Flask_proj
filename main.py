@@ -59,16 +59,14 @@ def db_seed():
                    number_of_orders=2
                    )
 
-    order1 = Order(id=412,
-                   car_number='ab241',
+    order1 = Order(car_number='ab241',
                    client_passport_number="ab241",
                    add_date=datetime.datetime.now(),
                    rental_time=2,
                    car_rental_cost=85.00)
     order1.calculate_total_cost()
 
-    order2 = Order(id=532,
-                   car_number='ac4123',
+    order2 = Order(car_number='ac4123',
                    client_passport_number="ac4123",
                    add_date=datetime.datetime.now(),
                    rental_time=3,
