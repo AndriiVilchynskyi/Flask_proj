@@ -83,6 +83,7 @@ def db_seed():
     print("Database seeded!")
 
 
+
 @app.route('/orders/add', methods=['GET', 'POST'])
 def add_order():
     if request.method == 'POST':
@@ -102,6 +103,8 @@ def add_order():
 
         return redirect(url_for('orders_list'))
     return render_template('add_order.html')
+
+
 
 
 @app.route('/clients_list')
@@ -165,4 +168,4 @@ order_schema = OrderSchema()
 orders_schema = OrderSchema(many=True)
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
