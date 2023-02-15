@@ -16,6 +16,9 @@ ma = Marshmallow(app)
 
 
 
+@app.route("/nav")
+def nav():
+    return render_template("navbar.txt.html")
 
 @app.route("/orders")
 def orders():
